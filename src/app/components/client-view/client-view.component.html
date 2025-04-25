@@ -1,0 +1,20 @@
+<div class="container py-4" *ngIf="client">
+    <h3>Client Profile</h3>
+    <dl class="row">
+      <dt class="col-sm-3">Name</dt><dd class="col-sm-9">{{client.firstName}} {{client.lastName}}</dd>
+      <dt class="col-sm-3">Email</dt><dd class="col-sm-9">{{client.email}}</dd>
+      <dt class="col-sm-3">Programs</dt>
+      <dd class="col-sm-9">
+        <span *ngIf="!client.enrolledProgramIds.length">None</span>
+        <ul *ngIf="client.enrolledProgramIds.length">
+          <li *ngFor="let pid of client.enrolledProgramIds">
+            {{ getProgramName(pid) }}
+          </li>
+        </ul>
+      </dd>
+      <dt class="col-sm-3">Joined</dt><dd class="col-sm-9">{{client.createdAt|date:'full'}}</dd>
+    </dl>
+    <button class="btn btn-secondary" routerLink="/dashboard/clients"> Back</button>
+     
+  </div>
+  

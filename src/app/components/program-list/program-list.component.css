@@ -1,0 +1,19 @@
+/* Push the container down slightly if you need */
+.container {
+    padding-top: 1rem;
+  }
+  
+  /* Ensure modals sit above everything */
+  .modal-backdrop {
+    z-index: 1040;
+  }
+  .modal {
+    z-index: 1050;
+  }
+  
+  /* Fix for scrollbar in modal */
+  .modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+  
